@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for pelicula in peliculas%}
+{{pelicula['movie']}} <br/>
+{{pelicula['year']}} <br/>
+{% endfor %}
+
+<h1>Filtrado</h1>
+{% for filtrado in filtrados%}
+{{filtrado['movie']}} <br/>
+{{filtrado['year']}} <br/>
+{% endfor %}
+</body>
+</html>

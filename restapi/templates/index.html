@@ -1,0 +1,44 @@
+{% extends './layout/index.html' %}
+
+{% block content%}
+
+{% if aceptar %}
+<p>Bienvenido {{nombre}} {{apellido}} con cedula {{cedula}}</p>
+{% else %}
+<p>Tienes un false, no existes</p>
+{% endif %}
+
+
+<form method="POST">
+    {{formulario.hidden_tag()}}
+    <div class="form-group row">
+        <label for="colFormLabelSm"
+               class="col-sm-2 col-form-label col-form-label-sm">{{formulario.nombre.label}}</label>
+        <div class="col-sm-10">
+            <!--      <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm">-->
+            {{formulario.nombre(class="form-control form-control-sm")}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="colFormLabel" class="col-sm-2 col-form-label">{{formulario.apellido.label}}</label>
+        <div class="col-sm-10">
+            <!--      <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">-->
+            {{formulario.apellido(class="form-control")}}
+            {{formulario.genero}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="colFormLabelLg"
+               class="col-sm-2 col-form-label col-form-label-lg">{{formulario.cedula.label}}</label>
+        <div class="col-sm-10">
+            <!--      <input type="email" class="form-control form-control-lg" id="colFormLabelLg" placeholder="col-form-label-lg">-->
+            {{formulario.cedula(class="form-control form-control-lg")}}
+            <input type="submit" value="Aceptar">
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}
+
+

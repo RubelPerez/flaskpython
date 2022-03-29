@@ -1,0 +1,12 @@
+{% extends '/layout/index.html' %}
+
+{% block content %}
+{% for data in datas%}
+<p>
+    {{data[0:7]}}
+</p>
+
+
+{% endfor %}
+
+{% endblock %}
