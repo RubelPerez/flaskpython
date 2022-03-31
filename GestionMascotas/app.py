@@ -56,13 +56,13 @@ def register():
 
 @app.route("/delete", methods=['GET', 'POST'])
 def delete():
-    registerForm = DeleteForm()
-    if registerForm.validate_on_submit():
-        id = registerForm.id.data
+    deleteForm = DeleteForm()
+    if deleteForm.validate_on_submit():
+        id = deleteForm.id.data
         mascota = Mascota.query.get(id)
         database.session.delete(mascota)
         database.session.commit()
         flash('Eliminado correctamente')
         return redirect(url_for("delete"))
 
-    return render_template("delete.html", formulario=registerForm)
+    return render_template("delete.html", formulario=deleteForm)
